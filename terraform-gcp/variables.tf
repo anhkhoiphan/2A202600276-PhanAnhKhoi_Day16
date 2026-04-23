@@ -6,13 +6,13 @@ variable "project_id" {
 variable "region" {
   description = "GCP Region"
   type        = string
-  default     = "us-central1"
+  default     = "asia-southeast1"
 }
 
 variable "zone" {
-  description = "GCP Zone"
+  description = "GCP Zone — try b or c if a is unavailable"
   type        = string
-  default     = "us-central1-a"
+  default     = "asia-southeast1-b"
 }
 
 variable "hf_token" {
@@ -29,9 +29,9 @@ variable "model_id" {
 }
 
 variable "machine_type" {
-  description = "GCE Machine Type for the GPU node"
+  description = "GCE Machine Type"
   type        = string
-  default     = "n1-standard-4"
+  default     = "n2-standard-8"
 }
 
 variable "gpu_type" {
@@ -41,7 +41,7 @@ variable "gpu_type" {
 }
 
 variable "gpu_count" {
-  description = "Number of GPUs to attach"
+  description = "Number of GPUs (0 = CPU only)"
   type        = number
-  default     = 1
+  default     = 0
 }
